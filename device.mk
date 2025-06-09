@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Don't forget to sign your builds:
+# https://github.com/306bobby-android/crDroid-build-signed-script
+include vendor/lineage-priv/keys/keys.mk
+
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
