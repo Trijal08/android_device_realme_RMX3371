@@ -18,6 +18,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Gapps
 include vendor/gapps/arm64/arm64-vendor.mk
 
+# Aperture
+PRODUCT_NO_CAMERA := true
+
 PRODUCT_NAME := lineage_RMX3371
 PRODUCT_DEVICE := RMX3371
 PRODUCT_MANUFACTURER := realme
