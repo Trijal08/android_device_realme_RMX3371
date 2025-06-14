@@ -15,6 +15,9 @@ $(call inherit-product, device/realme/RMX3371/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Gapps
+include vendor/gapps/arm64/arm64-vendor.mk
+
 PRODUCT_NAME := lineage_RMX3371
 PRODUCT_DEVICE := RMX3371
 PRODUCT_MANUFACTURER := realme
