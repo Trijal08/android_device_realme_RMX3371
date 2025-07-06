@@ -196,8 +196,6 @@ public class RefreshSettingsFragment extends PreferenceFragment
         switch (state) {
             case RefreshUtils.STATE_STANDARD:
                 return R.drawable.ic_refresh_60;
-            case RefreshUtils.STATE_HIGH:
-                return R.drawable.ic_refresh_90;
             case RefreshUtils.STATE_MAXIMUM:
                 return R.drawable.ic_refresh_120;
             case RefreshUtils.STATE_DEFAULT:
@@ -231,7 +229,6 @@ public class RefreshSettingsFragment extends PreferenceFragment
         private final String[] items = {
                 getResources().getString(R.string.refresh_default),
                 "60 Hz",
-                "90 Hz",
                 "120 Hz"
         };
 

@@ -38,16 +38,13 @@ public final class RefreshUtils {
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_STANDARD = 1;
-    protected static final int STATE_HIGH = 2;
-    protected static final int STATE_MAXIMUM = 3;
+    protected static final int STATE_MAXIMUM = 2;
 
     private static final float REFRESH_STATE_DEFAULT = 60f;
     private static final float REFRESH_STATE_STANDARD = 60f;
-    private static final float REFRESH_STATE_HIGH = 90f;
     private static final float REFRESH_STATE_MAXIMUM = 120f;
 
     private static final String REFRESH_STANDARD = "refresh.standard=";
-    private static final String REFRESH_HIGH = "refresh.high=";
     private static final String REFRESH_MAXIMUM = "refresh.maximum=";
 
     private SharedPreferences mSharedPrefs;
@@ -77,7 +74,7 @@ public final class RefreshUtils {
 
         if (value == null || value.isEmpty()) {
             value = REFRESH_STANDARD + ":" +
-                    REFRESH_HIGH + ":" + REFRESH_MAXIMUM;
+                    REFRESH_MAXIMUM;
             writeValue(value);
         }
         return value;
@@ -92,9 +89,6 @@ public final class RefreshUtils {
         switch (mode) {
             case STATE_STANDARD:
                 modes[0] = modes[0] + packageName + ",";
-                break;
-            case STATE_HIGH:
-                modes[1] = modes[1] + packageName + ",";
                 break;
             case STATE_MAXIMUM:
                 modes[2] = modes[2] + packageName + ",";
@@ -112,8 +106,6 @@ public final class RefreshUtils {
         int state = STATE_DEFAULT;
         if (modes[0].contains(packageName + ",")) {
             state = STATE_STANDARD;
-        } else if (modes[1].contains(packageName + ",")) {
-            state = STATE_HIGH;
         } else if (modes[2].contains(packageName + ",")) {
             state = STATE_MAXIMUM;
         }
@@ -132,12 +124,6 @@ public final class RefreshUtils {
 
             if (modes[0].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_STANDARD;
-                if (minrate > maxrate) {
-                minrate = maxrate;
-                }
-                isAppInList = true;
-                } else if (modes[1].contains(packageName + ",")) {
-                maxrate = REFRESH_STATE_HIGH;
                 if (minrate > maxrate) {
                 minrate = maxrate;
                 }
