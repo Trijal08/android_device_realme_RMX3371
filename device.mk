@@ -128,7 +128,8 @@ PRODUCT_COPY_FILES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    DSPVolumeSynchronizer
+    DSPVolumeSynchronizer \
+    OplusDolby
 
 # Display
 PRODUCT_PACKAGES += \
@@ -141,10 +142,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-
-# Dolby
-PRODUCT_PACKAGES += \
-    OplusDolby
 
 # DRM
 PRODUCT_PACKAGES += \
