@@ -10,16 +10,34 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from RMX3371 device
+DEVICE_CODENAME := RMX3371
+VENDOR_PATH := vendor/realme/RMX3371
 $(call inherit-product, device/realme/RMX3371/device.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common stuff
+ROM_VENDOR := lineage
+ifdef ROM_VENDOR
+$(call inherit-product, vendor/$(ROM_VENDOR)/config/common_full_phone.mk)
+else
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+endif
 
-PRODUCT_NAME := lineage_RMX3371
-PRODUCT_DEVICE := RMX3371
+# Device identifier. This must come after all inclusions
+ifdef ROM_VENDOR
+PRODUCT_NAME := $(ROM_VENDOR)_$(DEVICE_CODENAME)
+else
+PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+endif
+PRODUCT_DEVICE := $(DEVICE_CODENAME)
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3371
+
+# Boot animation
+scr_resolution := 1080
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
