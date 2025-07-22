@@ -64,6 +64,7 @@
     <libraries>
         <library name="bundle" path="libbundlewrapper.so"/>
         <library name="reverb" path="libreverbwrapper.so"/>
+	<library name="v4a_re" path="libv4a_re.so"/>
         <library name="qcbassboost" path="libqcbassboost.so"/>
         <library name="qcvirt" path="libqcvirt.so"/>
         <library name="qcreverb" path="libqcreverb.so"/>
@@ -127,6 +128,7 @@
         <effect name="music_helper" library="volume_listener" uuid="08b8b058-0590-11e5-ac71-0025b32654a0"/>
         <effect name="ring_helper" library="volume_listener" uuid="0956df94-0590-11e5-bdbe-0025b32654a0"/>
         <effect name="alarm_helper" library="volume_listener" uuid="09f303e2-0590-11e5-8fdb-0025b32654a0"/>
+	<effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
         <effect name="voice_helper" library="volume_listener" uuid="0ace5c08-0590-11e5-ae9e-0025b32654a0"/>
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
