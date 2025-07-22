@@ -6,6 +6,8 @@
 
 DEVICE_PATH := device/realme/RMX3371
 
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
+
 # A/B
 AB_OTA_UPDATER := true
 
