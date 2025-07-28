@@ -65,6 +65,13 @@ on boot
     # TOF
     chown cameraserver cameraserver /dev/stmvl53l1_ranging
 
+    # Game Bar
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0660 /sys/class/drm/sde-crtc-0/measured_fps
+
+    chown system system /sys/class/power_supply/battery/temp
+    chmod 0660 /sys/class/power_supply/battery/temp
+
 on property:ro.boot.prjname=*
     # Display
     setprop ro.separate.soft ${ro.boot.prjname}
