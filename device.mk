@@ -134,10 +134,6 @@ PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer \
     OplusDolby
 
-# Parts
-PRODUCT_PACKAGES += \
-    MyParts
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
