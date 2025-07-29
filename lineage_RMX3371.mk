@@ -64,8 +64,9 @@ TARGET_SUPPORTS_CALL_RECORDING := true
 # GMS
 WITH_GMS := true
 
-# Mist OS Flags
-MISTOS_MAINTAINER := GamerBoy1234294
+# Lunaris-AOSP flags
+TARGET_OPTIMIZED_DEXOPT := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
 
 # Boot animation
 scr_resolution := 1080
